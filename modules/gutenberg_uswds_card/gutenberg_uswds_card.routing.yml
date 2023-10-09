@@ -1,0 +1,8 @@
+gutenberg_uswds_card.media.load_media:
+  path: '/gutenberg_uswds_card/media/load-media/{media}'
+  defaults:
+    _controller: '\Drupal\gutenberg_uswds_card\Controller\UswdsCardLoadMediaController::loadMedia'
+  methods: 'GET'
+  requirements:
+    _permission: 'use gutenberg'
+    _format: json

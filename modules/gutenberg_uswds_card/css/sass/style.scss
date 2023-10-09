@@ -1,0 +1,31 @@
+.wp-block-uswds-card.usa-card {
+  height: 100%;
+  margin-bottom: 0;
+  .usa-card__img {
+    width: 100%;
+    img {
+      max-height: 320px;
+    }
+  }
+  &.usa-card--flag {
+    margin-bottom: 1em;
+  }
+  .usa-card__container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.wp-block-columns {
+  margin-bottom: 1em;
+}
+@media (min-width: 782px) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+// Only mobile.
+@media (max-width: 599px) {
+  .wp-block-column:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

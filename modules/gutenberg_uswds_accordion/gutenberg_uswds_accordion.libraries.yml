@@ -1,0 +1,22 @@
+block-edit:
+  version: VERSION
+  js:
+    js/index.js: { }
+  css:
+    theme:
+      css/style.css: { }
+      css/edit.css: { }
+  dependencies:
+    - gutenberg/edit-node
+    - gutenberg_uswds/accordion
+
+block-view:
+  version: VERSION
+  js:
+    js/accordion.js: { }
+  css:
+    theme:
+      css/style.css: { }
+  dependencies:
+    - gutenberg_uswds/uswds
+    - core/drupal

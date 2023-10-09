@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an example Gutenberg block server-side.
+ *
+ * Available variables:
+ * - block_name: The Gutenberg block name.
+ * - block_content: The content of this block.
+ * - block_attributes: The attributes of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *
+ * @see template_preprocess_gutenberg_block()
+ * @see template_preprocess_gutenberg_block__gutenberg_uswds__image_with_caption()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('gutenberg_uswds_accordion/block-view') }}
+{% set accordion_item_id = random() %}
+{# Multiselect #}
+{% if block_attributes.open %}
+  {% set open = 'true' %}
+{% else %}
+  {% set open = 'false' %}
+{% endif %}
+<h4{{ attributes.addClass('usa-accordion__heading') }}>
+  <button
+    class="usa-accordion__button"
+    aria-expanded="{{ open }}"
+    aria-controls="{{ accordion_item_id }}"
+  >
+    {{ block_attributes.heading }}
+  </button>
+</h4>
+<div id="{{ accordion_item_id }}" class="usa-accordion__content usa-prose">
+  {{ block_content }}
+</div>

@@ -1,0 +1,9 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+.wp-block-uswds-summary-box .block-editor-block-list__layout p:last-child,
+.wp-block-uswds-summary-box .block-editor-block-list__layout ul:last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=edit.css.map */

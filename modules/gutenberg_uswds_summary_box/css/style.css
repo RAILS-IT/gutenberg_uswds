@@ -1,0 +1,11 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+.wp-block-uswds-summary-box {
+  margin-bottom: 1em;
+}
+.wp-block-uswds-summary-box .usa-summary-box__text > *:last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

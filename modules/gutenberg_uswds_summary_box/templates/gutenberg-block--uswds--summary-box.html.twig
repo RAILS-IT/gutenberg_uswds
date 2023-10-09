@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an example Gutenberg block server-side.
+ *
+ * Available variables:
+ * - block_name: The Gutenberg block name.
+ * - block_content: The content of this block.
+ * - block_attributes: The attributes of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *
+ * @see template_preprocess_gutenberg_block()
+ * @see template_preprocess_gutenberg_block__uswds__card()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('gutenberg_uswds_summary_box/block-view') }}
+{%
+  set classes = [
+    'usa-summary-box',
+  ]
+%}
+<div {{ attributes.addClass(classes).setAttribute('role', 'region').setAttribute('aria-labelledby', 'summary-box-key-information') }}
+  style="background-color:{{ block_attributes.backgroundColor }};border-color:{{ block_attributes.borderColor }}"
+>
+  <div class="usa-summary-box__body">
+    <h3 class="no-toc">
+      {% if block_attributes.title %}
+        {{ block_attributes.title }}
+      {% else %}
+        {{ 'Summary'|t }}
+      {% endif %}
+    </h3>
+    <div class="usa-summary-box__text">
+      {{ block_content }}
+    </div>
+  </div>
+</div>

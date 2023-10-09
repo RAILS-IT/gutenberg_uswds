@@ -1,0 +1,14 @@
+name: Gutenberg - USWDS Summary Box
+type: module
+description: USWDS Summary Box Gutenberg block.
+package: Gutenberg
+core_version_requirement: ^9 || ^10
+dependencies:
+  - gutenberg:gutenberg
+  - gutenberg_uswds:gutenberg_uswds
+  - drupal:media_library
+
+# Information added by Drupal.org packaging script on 2023-08-10
+version: '1.0.0-beta2'
+project: 'gutenberg_uswds'
+datestamp: 1691709633

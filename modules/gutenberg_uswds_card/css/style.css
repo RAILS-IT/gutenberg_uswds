@@ -1,0 +1,37 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+.wp-block-uswds-card.usa-card {
+  height: 100%;
+  margin-bottom: 0;
+}
+.wp-block-uswds-card.usa-card .usa-card__img {
+  width: 100%;
+}
+.wp-block-uswds-card.usa-card .usa-card__img img {
+  max-height: 320px;
+}
+.wp-block-uswds-card.usa-card.usa-card--flag {
+  margin-bottom: 1em;
+}
+.wp-block-uswds-card.usa-card .usa-card__container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wp-block-columns {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 782px) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 1em;
+  }
+}
+@media (max-width: 599px) {
+  .wp-block-column:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

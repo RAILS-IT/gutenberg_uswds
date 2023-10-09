@@ -1,0 +1,15 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+.wp-block-gutenberg-uswds-accordion .expand-link {
+  float: right;
+  position: relative;
+  margin-bottom: 0.4em;
+}
+.wp-block-gutenberg-uswds-accordion .expand-link .block-editor-block-icon {
+  position: absolute;
+  left: -24px;
+  top: 2px;
+}
+
+/*# sourceMappingURL=edit.css.map */

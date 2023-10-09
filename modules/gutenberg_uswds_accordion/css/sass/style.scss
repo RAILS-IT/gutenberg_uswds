@@ -1,0 +1,50 @@
+.wp-block-gutenberg-uswds-accordion.usa-accordion {
+  margin-bottom: 1em;
+  .usa-accordion__content > *:last-child p {
+    margin-bottom: 0;
+  }
+}
+.expand-link,
+.collapse-link {
+  float: right;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url(../img/usa-icons/add.svg),linear-gradient(transparent,transparent);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -21px;
+  }
+}
+
+.expand-link {
+  &::before {
+    background-image: url(../img/usa-icons/add.svg),linear-gradient(transparent,transparent);
+  }
+}
+.collapse-link {
+  &::before {
+    background-image: url(../img/usa-icons/remove.svg),linear-gradient(transparent,transparent);
+  }
+}
+.operations-group {
+  display: inline-block;
+  width: 100%;
+
+  .expand-link {
+    display: none;
+  }
+
+  &.collapsed {
+    .collapse-link {
+      display: none;
+    }
+    .expand-link {
+      display: inline-block;
+    }
+  }
+}

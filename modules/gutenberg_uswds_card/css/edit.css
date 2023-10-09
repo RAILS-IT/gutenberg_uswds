@@ -1,0 +1,27 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+div[data-type="uswds/card"] {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wp-block-uswds-card.usa-card {
+  margin-bottom: 0;
+}
+.wp-block-uswds-card.usa-card .button-link {
+  margin-top: 5px;
+}
+
+.wp-block {
+  max-width: 960px;
+}
+
+@media (min-width: 782px) {
+  .editor-styles-wrapper .block-editor-block-list__block.wp-block-column:not(:first-child) {
+    margin-left: 16px;
+  }
+}
+
+/*# sourceMappingURL=edit.css.map */

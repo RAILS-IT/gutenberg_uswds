@@ -1,0 +1,8 @@
+.wp-block-uswds-summary-box {
+  margin-bottom: 1em;
+  .usa-summary-box__text {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

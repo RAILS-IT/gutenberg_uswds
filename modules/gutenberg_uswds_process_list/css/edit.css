@@ -1,0 +1,67 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+div[data-type="uswds/process-list"] {
+  height: 100%;
+  padding: 1rem;
+}
+div[data-type="uswds/process-list"] h3,
+div[data-type="uswds/process-list"] h4 {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+div[data-type="uswds/process-list"] .usa-process-list__title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: calc(1.3rem + 0.6vw);
+  font-weight: 500;
+  line-height: 1.2;
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--alphabetical li.usa-process-list__item::before {
+  content: counter(usa-numbered-list, upper-alpha);
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--red li::before {
+  border-color: #e16b80;
+  color: #e16b80;
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--orange li::before {
+  border-color: #dd7533;
+  color: #dd7533;
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--yellow li::before {
+  border-color: #e6c74c;
+  color: #e6c74c;
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--green li::before {
+  border-color: #7d9b4e;
+  color: #7d9b4e;
+}
+div[data-type="uswds/process-list"] .usa-process-list.usa-process-list--blue li::before {
+  border-color: #449dac;
+  color: #449dac;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block:last-of-type li.usa-process-list__item {
+  border-left: none;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block li.usa-process-list__item {
+  border-left: 0.5rem solid #d9e8f6;
+  max-width: 72ex;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block li.usa-process-list__item::before {
+  left: -1rem;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block li.usa-process-list__item::marker {
+  content: none;
+}
+div[data-type="uswds/process-list"] .usa-process-list .block-editor-block-list__block li.usa-process-list__item h4 {
+  font-size: 1.46rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1b1b1b;
+  margin: 0;
+}
+
+/*# sourceMappingURL=edit.css.map */

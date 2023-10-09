@@ -1,0 +1,35 @@
+@import "mixins";
+ol.wp-block-uswds-process-list {
+  img {
+    height: auto;
+  }
+  li.usa-process-list__item::marker {
+    content: none;
+  }
+
+  &.usa-process-list--alphabetical {
+    li.usa-process-list__item::before {
+      content: counter(usa-numbered-list, upper-alpha);
+    }
+  }
+
+  &.usa-process-list--red {
+    @include colorDefinition(#e16b80);
+  }
+
+  &.usa-process-list--orange {
+    @include colorDefinition(#dd7533);
+  }
+
+  &.usa-process-list--yellow {
+    @include colorDefinition(#e6c74c);
+  }
+
+  &.usa-process-list--green {
+    @include colorDefinition(#7d9b4e);
+  }
+
+  &.usa-process-list--blue {
+    @include colorDefinition(#449dac);
+  }
+}

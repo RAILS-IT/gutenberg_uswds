@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Module implementation file.
+ */
+
+use Drupal\Component\Utility\NestedArray;
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * Add library override support from SDC.
+ */
+function gutenberg_uswds_library_info_alter(&$libraries, $extension) {
+  $module_handler = \Drupal::service('module_handler');
+  if ($module_handler->moduleExists('sdc')) {
+    $component_manager = \Drupal::service('plugin.manager.sdc');
+    $sdc_components = $component_manager->getDefinitions();
+    // Find SDC with gutenberg_component_module key defined.
+    foreach ($sdc_components as $component_id => $definition) {
+      if (isset($definition['gutenberg_component_module'])) {
+        $component_library = $definition['library'];
+        // Detect module with block edit library for the Gutenberg component.
+        if ($extension === $definition['gutenberg_component_module'] && isset($libraries['block-edit'])) {
+          // Set css assets path to absolute.
+          foreach ($component_library['css']['component'] as $asset_path => $asset_settings) {
+            unset($component_library['css']['component'][$asset_path]);
+            $new_asset_path = '/' . str_replace('../', '', $asset_path);
+            $component_library['css']['component'][$new_asset_path] = $asset_settings;
+          }
+          // Override library.
+          $libraries['block-edit']['css'] = NestedArray::mergeDeep($libraries['block-edit']['css'], $component_library['css']);
+          $libraries['block-edit']['dependencies'] = $component_library['dependencies'];
+          $libraries['block-edit']['dependencies'][] = 'gutenberg/edit-node';
+        }
+      }
+    }
+  }
+}

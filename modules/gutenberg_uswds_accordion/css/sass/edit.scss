@@ -1,0 +1,12 @@
+.wp-block-gutenberg-uswds-accordion {
+  .expand-link {
+    float: right;
+    position: relative;
+    margin-bottom: 0.4em;
+    .block-editor-block-icon {
+      position: absolute;
+      left: -24px;
+      top: 2px;
+    }
+  }
+}

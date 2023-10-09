@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an example Gutenberg block server-side.
+ *
+ * Available variables:
+ * - block_name: The Gutenberg block name.
+ * - block_content: The content of this block.
+ * - block_attributes: The attributes of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *
+ * @see template_preprocess_gutenberg_block()
+ * @see template_preprocess_gutenberg_block__uswds__card()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('gutenberg_uswds_card/block-view') }}
+{%
+  set classes = [
+    'usa-card',
+    block_attributes.layout == 'flag' ? 'usa-card--flag',
+    block_attributes.mediaOnRight ? 'usa-card--media-right',
+    block_attributes.titleAtTop ? 'usa-card--header-first'
+  ]
+%}
+{% set media_attributes = create_attribute() %}
+{%
+  set media_classes = [
+    'usa-card__media',
+    block_attributes.insetMedia ? 'usa-card__media--inset'
+  ]
+%}
+{%
+  set new_tab = block_attributes.buttonOpenNewTab ? '_blank' : '_self'
+%}
+<div {{ attributes.addClass(classes) }}>
+  <div class="usa-card__container">
+    <header class="usa-card__header">
+      <h2 class="usa-card__heading no-toc">{{ block_attributes.title }}</h2>
+    </header>
+    {% if block_attributes.mediaEntityId %}
+      <div {{ media_attributes.addClass(media_classes) }}>
+        <div class="usa-card__img">
+          <img
+            src={{ block_attributes.mediaEntity.media_details.sizes.large.source_url }}
+            alt="{{ block_attributes.mediaEntity.alt }}"
+            title="{{ block_attributes.mediaEntity.title }}"
+          />
+        </div>
+      </div>
+    {% endif %}
+    <div class="usa-card__body">
+      {{ block_content }}
+    </div>
+    {% if block_attributes.showButton %}
+      <div class="usa-card__footer">
+        <a href={{ block_attributes.buttonUrl }} class="usa-button" target="{{ new_tab }}">{{ block_attributes.button }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

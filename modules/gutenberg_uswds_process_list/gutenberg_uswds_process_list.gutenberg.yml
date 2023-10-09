@@ -1,0 +1,8 @@
+# Libraries to be injected on editor (node edit)
+libraries-edit:
+  - gutenberg_uswds_process_list/block-edit
+# Libraries to be injected on node view
+libraries-view: {}
+dynamic-blocks:
+  uswds/process-list: {}
+  uswds/process-list-item: {}

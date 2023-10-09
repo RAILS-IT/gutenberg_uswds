@@ -1,0 +1,34 @@
+/**
+ * Don't edit this file. Find all style at ./sass folder.
+ **/
+ol.wp-block-uswds-process-list img {
+  height: auto;
+}
+ol.wp-block-uswds-process-list li.usa-process-list__item::marker {
+  content: none;
+}
+ol.wp-block-uswds-process-list.usa-process-list--alphabetical li.usa-process-list__item::before {
+  content: counter(usa-numbered-list, upper-alpha);
+}
+ol.wp-block-uswds-process-list.usa-process-list--red li::before {
+  border-color: #e16b80;
+  color: #e16b80;
+}
+ol.wp-block-uswds-process-list.usa-process-list--orange li::before {
+  border-color: #dd7533;
+  color: #dd7533;
+}
+ol.wp-block-uswds-process-list.usa-process-list--yellow li::before {
+  border-color: #e6c74c;
+  color: #e6c74c;
+}
+ol.wp-block-uswds-process-list.usa-process-list--green li::before {
+  border-color: #7d9b4e;
+  color: #7d9b4e;
+}
+ol.wp-block-uswds-process-list.usa-process-list--blue li::before {
+  border-color: #449dac;
+  color: #449dac;
+}
+
+/*# sourceMappingURL=style.css.map */

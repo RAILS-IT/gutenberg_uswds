@@ -1,0 +1,12 @@
+name: 'Gutenberg USWDS'
+type: module
+description: 'Provides the base libraries for Gutenberg USWDS components.'
+core_version_requirement: ^9 || ^10
+package: Gutenberg
+dependencies:
+  - gutenberg:gutenberg
+
+# Information added by Drupal.org packaging script on 2023-08-10
+version: '1.0.0-beta2'
+project: 'gutenberg_uswds'
+datestamp: 1691709633

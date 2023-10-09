@@ -1,0 +1,79 @@
+@import "mixins";
+
+div[data-type="uswds/process-list"] {
+  height: 100%;
+  padding: 1rem;
+
+  h3,
+  h4 {
+    font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  }
+
+  .usa-process-list__title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: calc(1.3rem + 0.6vw);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .usa-process-list {
+    &.usa-process-list--alphabetical {
+      li.usa-process-list__item::before {
+        content: counter(usa-numbered-list, upper-alpha);
+      }
+    }
+
+    &.usa-process-list--red {
+      @include colorDefinition(#e16b80);
+    }
+
+    &.usa-process-list--orange {
+      @include colorDefinition(#dd7533);
+    }
+
+    &.usa-process-list--yellow {
+      @include colorDefinition(#e6c74c);
+    }
+
+    &.usa-process-list--green {
+      @include colorDefinition(#7d9b4e);
+    }
+
+    &.usa-process-list--blue {
+      @include colorDefinition(#449dac);
+    }
+
+    .block-editor-block-list__block {
+      margin-top: 0;
+      margin-bottom: 0;
+      &:last-of-type {
+        li.usa-process-list__item {
+          border-left: none;
+        }
+      }
+
+      li.usa-process-list__item {
+        border-left: 0.5rem solid #d9e8f6;
+        max-width: 72ex;
+
+        &::before {
+          left: -1rem;
+        }
+
+        &::marker {
+          content: none;
+        }
+
+        h4 {
+          font-size: 1.46rem;
+          font-weight: 700;
+          line-height: 1.1;
+          color: #1b1b1b;
+          margin: 0;
+        }
+      }
+    }
+
+  }
+}

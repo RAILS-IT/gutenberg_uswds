@@ -1,0 +1,7 @@
+// Border and Color Mixin
+@mixin colorDefinition($color) {
+  li::before {
+    border-color: $color;
+    color: $color;
+  }
+}

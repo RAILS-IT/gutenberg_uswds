@@ -1,0 +1,31 @@
+.wp-block-uswds-modal {
+  margin-bottom: 1em;
+
+  a.usa-button:focus {
+    color: white;
+  }
+}
+.usa-modal__content {
+  position: relative;
+  .usa-modal__close {
+    font-size: 30px;
+    margin: 8px;
+    top: 0;
+    position: absolute;
+    background-image: url(../img/close.svg), linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+    background-size: 0.7rem;
+    background-position: 5px;
+    background-color: white;
+    border: 2px solid #565c65;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  img {
+    max-width: 100%;
+  }
+  .wp-block-button__link {
+    color: #fff !important;
+  }
+}

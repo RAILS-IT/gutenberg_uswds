@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an example Gutenberg block server-side.
+ *
+ * Available variables:
+ * - block_name: The Gutenberg block name.
+ * - block_content: The content of this block.
+ * - block_attributes: The attributes of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *
+ * @see template_preprocess_gutenberg_block()
+ * @see template_preprocess_gutenberg_block__uswds__image_with_caption()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('gutenberg_uswds_modal/block-view') }}
+{% set modal_id = random() %}
+{% set button_attributes = create_attribute() %}
+{% set modal_attributes = create_attribute() %}
+{%
+  set modal_classes = [
+    'usa-modal',
+    block_attributes.large ? 'usa-modal--lg' : '',
+  ]
+%}
+<div{{ attributes }}>
+  <a {{ button_attributes
+    .addClass(block_attributes.buttonUnstyled ? 'usa-link' : 'usa-button')
+    .setAttribute('href', "#" ~ modal_id)
+    .setAttribute('aria-controls', modal_id)
+    .setAttribute('data-open-modal', '')
+  }}>
+    {{ block_attributes.button }}
+  </a>
+  <div {{ modal_attributes
+    .addClass(modal_classes)
+    .setAttribute('id', modal_id)
+    .setAttribute('aria-labelledby', modal_id ~ "-heading")
+    .setAttribute('aria-describedby', modal_id ~ "-description")
+  }}>
+    <div class="usa-modal__content">
+      <div class="usa-modal__main">
+        <h2 class="usa-modal__heading" id={{ modal_id ~ "-heading" }}>
+          {{ block_attributes.title }}
+        </h2>
+        <div class="usa-prose" id={{ modal_id ~ "-description" }}>
+          {{ block_content }}
+        </div>
+      </div>
+      <button
+        class="usa-button usa-modal__close"
+        aria-label="Close this window"
+        data-close-modal
+      >
+      </button>
+    </div>
+  </div>
+</div>
