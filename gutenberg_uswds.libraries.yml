@@ -3,15 +3,6 @@ uswds:
   js:
     assets/js/uswds-init.min.js: { minified: true }
     assets/js/uswds.min.js: { minified: true }
-  css:
-    component:
-      assets/css/styles.css: { }
-
-accordion:
-  version: VERSION
-  css:
-    component:
-      assets/css/accordion.css: { }
 
 card:
   version: VERSION
