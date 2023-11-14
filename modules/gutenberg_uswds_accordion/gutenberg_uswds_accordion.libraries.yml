@@ -16,7 +16,7 @@ block-view:
     js/accordion.js: { }
   css:
     theme:
-      css/style.css: { }
+      /themes/custom/uswds_rails/assets/css/uswds.css: { }
   dependencies:
     - gutenberg_uswds/uswds
     - core/drupal
