@@ -11,10 +11,6 @@ const accordion = {
   description: __('Wrapper for Accordion Items'),
   icon: 'editor-justify',
   attributes: {
-    multiselect: {
-      type: 'boolean',
-      default: false,
-    },
     controlButton: {
       type: 'boolean',
       default: false,
@@ -22,11 +18,11 @@ const accordion = {
   },
 
   edit({ attributes, className, setAttributes, isSelected }) {
-    const { multiselect, controlButton } = attributes;
+    const { controlButton } = attributes;
 
     return (
       <Fragment>
-        <div className={ `${className} usa-accordion` } aria-multiselectable={multiselect}>
+        <div className={ `${className} usa-accordion` }>
           { controlButton &&
             <a href="" target="blank" className="usa-link expand-link">{ __('Expand All') }</a>
           }
