@@ -46,6 +46,10 @@ var accordion = {
   description: __('Wrapper for Accordion Items'),
   icon: 'editor-justify',
   attributes: {
+    multiselect: {
+      type: 'boolean',
+      default: false
+    },
     controlButton: {
       type: 'boolean',
       default: false
@@ -56,9 +60,11 @@ var accordion = {
       className = _ref.className,
       setAttributes = _ref.setAttributes,
       isSelected = _ref.isSelected;
-    var controlButton = attributes.controlButton;
+    var multiselect = attributes.multiselect,
+      controlButton = attributes.controlButton;
     return React.createElement(Fragment, null, React.createElement("div", {
-      className: "".concat(className, " usa-accordion")
+      className: "".concat(className, " usa-accordion"),
+      "aria-multiselectable": multiselect
     }, controlButton && React.createElement("a", {
       href: "",
       target: "blank",

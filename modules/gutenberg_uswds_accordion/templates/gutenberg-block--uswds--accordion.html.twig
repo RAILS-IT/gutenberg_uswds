@@ -18,6 +18,12 @@
 #}
 {{ attach_library('gutenberg_uswds_accordion/block-view') }}
 {% set accordion_id = random() %}
+{# Multiselect #}
+{% if block_attributes.multiselect %}
+  {% set multiselect = 'true' %}
+{% else %}
+  {% set multiselect = 'false' %}
+{% endif %}
 {# Expand/Collapse All #}
 {% if block_attributes.controlButton %}
 <div class="operations-group collapsed">
@@ -26,6 +32,6 @@
 </div>
 {% endif %}
 {# Accordion #}
-<div{{ attributes.addClass('usa-accordion').setAttribute('id', accordion_id) }}>
+<div{{ attributes.addClass('usa-accordion').setAttribute('id', accordion_id).setAttribute('aria-multiselectable', multiselect) }}>
   {{ block_content }}
 </div>
