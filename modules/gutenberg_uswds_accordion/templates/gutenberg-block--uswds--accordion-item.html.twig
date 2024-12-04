@@ -24,15 +24,15 @@
 {% else %}
   {% set open = 'false' %}
 {% endif %}
-<span{{ attributes.addClass('usa-accordion__heading') }}>
+<h4{{ attributes.addClass('usa-accordion__heading') }}>
   <button
     class="usa-accordion__button"
     aria-expanded="{{ open }}"
     aria-controls="{{ accordion_item_id }}"
   >
-    <span class="button_inside">{{ block_attributes.heading|replace({'&amp;': '&', '&#039;': "'", '&lt;': '<', '&gt;': '>'}) }}</span>
+    {{ block_attributes.heading }}
   </button>
-</span>
+</h4>
 <div id="{{ accordion_item_id }}" class="usa-accordion__content usa-prose">
   {{ block_content }}
 </div>
